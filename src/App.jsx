@@ -18,7 +18,7 @@ function App() {
         {/* Define distinct routes for signup and signin */}
         {/* <Route path="/signup" element={<Signup />} /> */}
         <Route path="/signin" element={<Signin />} />
-        <Route path="/user_list" element={token ?<UserList />: <Signin />} />
+        <Route path="/user_list" element={token ?<UserList />: <Navigate to="/signin"/>} />
       </Routes>
     </BrowserRouter>
   );
