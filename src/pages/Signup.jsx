@@ -14,6 +14,7 @@ const Signup = () => {
           password: passRef.current.value,
         });
         console.log("Registration successful:", res.data);
+        
         // Handle successful signup (e.g., redirect, display a message, etc.)
       } catch (error) {
         console.error("Error during registration:", error);
