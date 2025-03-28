@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import axios from "axios";
 import { useRef } from "react";
 import { Navigate, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Signin = () => {
   const emailRef = useRef(null);
@@ -18,12 +19,16 @@ const Signin = () => {
        
         
         if(res.error){
+          toast.error("please check inputs",res.error)
           console.log(res.error)
           return;
         }
         console.log("Registration successful:", res.data);
+        toast.success("Login successful")
+        localStorage.setItem("token", res.data.token);
          navigate("/user_list")
       } catch (error) {
+        toast.error("please check inputs")
         console.error("Error during registration:", error);
         // Handle error state (e.g., show an error message to the user)
       }
