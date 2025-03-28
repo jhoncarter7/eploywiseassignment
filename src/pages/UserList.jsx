@@ -21,6 +21,7 @@ const UserList = () => {
   console.log(userList);
 
   
+  
   const deleteUserHandler = async (userId) => {
     try {
       const res = await axios.delete(`https://reqres.in/api/users/${userId}`);
